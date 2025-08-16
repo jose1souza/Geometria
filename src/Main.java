@@ -2,16 +2,17 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-		Square q1 = new Square();
-		Scanner read = new Scanner(System.in);
-		double q1Side;
-		
+		Scanner reader = new Scanner(System.in);
+		double squareSide;
+
 		System.out.print("Side: ");
-		q1Side = read.nextDouble();
-		q1.setSide(q1Side);
-		q1.calculateShape();
-		System.out.print("Shape: ");
-		System.out.print(q1.getShape());
-		q1.drawShape();
+		squareSide = reader.nextDouble();
+		
+		Square square = new Square(squareSide);
+		
+		square.calculateShape();
+		System.out.println("Shape: " + square.getShape());
+		System.out.println("Draw form: ");
+		square.drawShape();
 	}
 }
