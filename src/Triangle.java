@@ -28,15 +28,5 @@ public class Triangle extends Shape {
 	@Override
 	public void drawShape() {
 		int line = round(this.height);
-
-		for (int i = 1; i <= line; i++) {
-			for (int j = 0; j < line - 1; j++) {
-				System.out.print(" ");
-			}
-			for (int k = 0; k < 2 * i - 1; k++) {
-				System.out.println("*");
-			}
-			System.out.println();
-		}
 	}
 }
