@@ -10,9 +10,9 @@ public class Square extends  Shape{
 		}
 	}
 
-	public void setBase(double base) {
+	/*public void setBase(double base) {
 		this.base = base;
-	}
+	}*/
 
 	public double getArea() {
 		return this.area;

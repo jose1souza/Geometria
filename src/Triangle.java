@@ -12,9 +12,9 @@ public class Triangle extends Shape {
 		}
 	}
 
-	public void setBase(double base) {
+	/*public void setBase(double base) {
 		this.base = base;
-	}
+	}*/
 
 	public double getArea() {
 		return this.area;
@@ -27,6 +27,14 @@ public class Triangle extends Shape {
 
 	@Override
 	public void drawShape() {
+		int column = round(this.base);
 		int line = round(this.height);
+
+		for (int i = 1; i <= line; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
 	}
 }

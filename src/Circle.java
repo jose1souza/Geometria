@@ -22,5 +22,16 @@ public class Circle extends Shape {
 	@Override
 	public void drawShape() {
 		int circleRadius = round(this.radius);
+		
+		for (int x = -circleRadius; x < circleRadius; x++) {
+			for (int y = -circleRadius; y < circleRadius; y++) {
+				if (Math.pow(x, 2) + Math.pow(y, 2) <= Math.pow(circleRadius, 2)) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+		}
 	}
 }
