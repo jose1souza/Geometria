@@ -1,4 +1,7 @@
+package project.app;
+
 import java.util.*;
+import project.model.*;
 
 public class Main {
 	private static int menu(Scanner reader) {

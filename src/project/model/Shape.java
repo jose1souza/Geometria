@@ -1,3 +1,5 @@
+package project.model;
+
 public abstract class Shape {
 	protected double area;
 

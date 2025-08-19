@@ -1,12 +1,14 @@
-
-public class Square extends  Shape{
+package project.model;
+public class Rectangle extends Shape{
 	private double base;
+	private double height;
 
-	Square(double newSide) {
-		if (newSide > 0) {
-			this.base = newSide;
+	public Rectangle(double newBase, double newHeight) {
+		if (newBase > 0 && newHeight > 0) {
+			this.base = newBase;
+			this.height = newHeight;
 		} else {
-			System.out.println("Base cannot be less than or equal to 0");
+			System.out.println("Side and Height cannot be less than or equal to 0");
 		}
 	}
 
@@ -17,16 +19,16 @@ public class Square extends  Shape{
 	public double getArea() {
 		return this.area;
 	}
-	
+
 	@Override
 	public void calculateArea() {
-		this.area = this.base * this.base;
+		this.area = this.base * this.height;
 	}
 
 	@Override
 	public void drawShape() {
 		int column = round(this.base);
-		int line = round(this.base);
+		int line = round(this.height);
 
 		for (int i = 0; i < line; i++) {
 			for (int j = 0; j < column; j++) {

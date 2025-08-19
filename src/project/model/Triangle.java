@@ -1,9 +1,10 @@
+package project.model;
 
 public class Triangle extends Shape {
 	private double base;
 	private double height;
 
-	Triangle(double newBase, double newHeight) {
+	public Triangle(double newBase, double newHeight) {
 		if (newBase > 0 && newHeight > 0) {
 			this.base = newBase;
 			this.height = newHeight;
@@ -27,11 +28,10 @@ public class Triangle extends Shape {
 
 	@Override
 	public void drawShape() {
-		int column = round(this.base);
-		int line = round(this.height);
+		int height = round(this.height);
 
-		for (int i = 1; i <= line; i++) {
-			for (int j = 1; j <= i; j++) {
+		for (int lineController = 1; lineController <= height; lineController++) {
+			for (int asterisks = 1; asterisks <= lineController; asterisks++) {
 				System.out.print("* ");
 			}
 			System.out.println();
