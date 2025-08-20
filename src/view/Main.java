@@ -50,11 +50,12 @@ public class Main {
 				rectangleHeight = reader.nextDouble();
 
 				Rectangle rectangle = new Rectangle(rectangleBase, rectangleHeight);
+				RectangleConsoleDrawer rectangleConsoleDrawer = new RectangleConsoleDrawer(rectangle);
 
 				rectangle.calculateArea();
 				System.out.println("Area of rectangle: " + rectangle.getArea());
 				System.out.println("Draw form rectangle:");
-				rectangle.drawShape();
+				rectangleConsoleDrawer.drawRectangle();
 				break;
 			case 3:
 				double radiusOfCircle;
@@ -63,11 +64,12 @@ public class Main {
 				radiusOfCircle = reader.nextDouble();
 
 				Circle circle = new Circle(radiusOfCircle);
+				CircleConsoleDrawer circleConsoleDrawer = new CircleConsoleDrawer(circle);
 
 				circle.calculateArea();
 				System.out.println("Area of circle: " + circle.getArea());
 				System.out.println("Draw form circle:");
-				circle.drawShape();
+				circleConsoleDrawer.drawCircle();
 				break;
 			case 4:
 				double triangleBase, triangleHeight;
@@ -77,11 +79,12 @@ public class Main {
 				triangleHeight = reader.nextDouble();
 
 				Triangle triangle = new Triangle(triangleBase, triangleHeight);
+				TriangleConsoleDrawer triangleConsoleDrawer = new TriangleConsoleDrawer(triangle);
 
 				triangle.calculateArea();
 				System.out.println("Area of triangle:" + triangle.getArea());
 				System.out.println("Draw form triangle:");
-				triangle.drawShape();
+				triangleConsoleDrawer.drawTriangle();
 				break;
 
 			case 0:

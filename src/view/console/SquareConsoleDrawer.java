@@ -13,9 +13,11 @@ public class SquareConsoleDrawer {
 	}
 
 	public void drawSquare() {
-		for (int i = 0; i < square.getSide(); i++) {
-			for (int j = 0; j < square.getSide(); j++)
-				System.out.print("* ");
+		int sideRounded = square.getSideRounded();
+		
+		for (int i = 0; i < sideRounded; i++) {
+			for (int j = 0; j < sideRounded; j++)
+				System.out.print("*");
 
 			System.out.println();
 		}

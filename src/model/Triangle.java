@@ -1,8 +1,9 @@
 package model;
 
-public class Triangle extends Shape {
+public class Triangle {
 	private double base;
 	private double height;
+	private double area;
 
 	public Triangle(double newBase, double newHeight) {
 		if (newBase > 0 && newHeight > 0) {
@@ -13,28 +14,25 @@ public class Triangle extends Shape {
 		}
 	}
 
-	/*public void setBase(double base) {
-		this.base = base;
-	}*/
-
 	public double getArea() {
 		return this.area;
 	}
 
-	@Override
+	public double getHeight() {
+		return this.height;
+	}
+	
+	public int getHeightRounded() {
+		return round(this.height);
+	}
+
 	public void calculateArea() {
 		this.area = (this.base * this.height) / 2;
 	}
 
-	@Override
-	public void drawShape() {
-		int height = round(this.height);
-
-		for (int lineController = 1; lineController <= height; lineController++) {
-			for (int asterisks = 1; asterisks <= lineController; asterisks++) {
-				System.out.print("* ");
-			}
-			System.out.println();
-		}
+	private int round(double value) {
+		int valueRounded = (int) Math.round(value);
+		return valueRounded;
 	}
+
 }

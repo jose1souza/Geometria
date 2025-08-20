@@ -1,7 +1,8 @@
 package model;
 
-public class Square extends  Shape{
+public class Square{
 	private double side;
+	private double area;
 
 	public Square(double newSide) {
 		if (newSide > 0) {
@@ -19,9 +20,17 @@ public class Square extends  Shape{
 		return this.area;
 	}
 	
-	@Override
+	public int getSideRounded() {
+		return round(this.side);
+	}
+	
 	public void calculateArea() {
 		this.area = this.side * this.side;
+	}
+	
+	public int round(double value) {
+		int valueRounded = (int) Math.round(value);
+		return valueRounded;
 	}
 
 }

@@ -1,6 +1,7 @@
 package model;
-public class Circle extends Shape {
+public class Circle{
 	private double radius;
+	private double area;
 
 	public Circle(double newRadius) {
 		if (newRadius > 0) {
@@ -13,25 +14,22 @@ public class Circle extends Shape {
 	public double getArea() {
 		return this.area;
 	}
-
-	@Override
+	
+	public double getRadius() {
+		return this.radius;
+	}
+	
+	public int getRadiusRounded() {
+		return round(this.radius);
+	}
+	
 	public void calculateArea() {
 		this.area = Math.PI * Math.pow(this.radius, 2);
 	}
-
-	@Override
-	public void drawShape() {
-		int circleRadius = round(this.radius);
-		
-		for (int axisX = -circleRadius; axisX < circleRadius; axisX++) {
-			for (int axisY = -circleRadius; axisY < circleRadius; axisY++) {
-				if (Math.pow(axisX, 2) + Math.pow(axisY, 2) <= Math.pow(circleRadius, 2)) {
-					System.out.print("*");
-				} else {
-					System.out.print(" ");
-				}
-			}
-			System.out.println();
-		}
+	
+	private int round(double value) {
+		int valueRounded = (int) Math.round(value);
+		return valueRounded;
 	}
+
 }
