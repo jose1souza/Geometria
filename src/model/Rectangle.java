@@ -1,10 +1,11 @@
 package model;
-public class Rectangle{
+public class Rectangle extends Shape{
 	private double base;
 	private double height;
 	private double area;
 
-	public Rectangle(double newBase, double newHeight) {
+	public Rectangle(String description,double newBase, double newHeight) {
+		super(description);
 		if (newBase > 0 && newHeight > 0) {
 			this.base = newBase;
 			this.height = newHeight;
@@ -30,16 +31,16 @@ public class Rectangle{
 	}
 	
 	public int getHeightRounded() {
-		return round(this.height);
+		return super.round(this.height);
+	}
+	
+	@Override
+	public String getDescription() {
+		return "Rectangle: " + super.getDescription();
 	}
 
 	public void calculateArea() {
 		this.area = this.base * this.height;
-	}
-	
-	public int round(double value) {
-		int valueRounded = (int) Math.round(value);
-		return valueRounded;
 	}
 
 }

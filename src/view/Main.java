@@ -28,14 +28,18 @@ public class Main {
 			switch (option) {
 			case 1:
 				double squareSide;
-
+				String descriptionSquare;
+				
+				System.out.println("Description of square: ");
+				descriptionSquare = reader.next();
 				System.out.print("Side of square: ");
 				squareSide = reader.nextDouble();
 
-				Square square = new Square(squareSide);
+				Square square = new Square(descriptionSquare,squareSide);
 				SquareConsoleDrawer squareConsoleDrawer = new SquareConsoleDrawer(square);
 
 				square.calculateArea();
+				System.out.println(square.getDescription());
 				System.out.println("Area of square: " + square.getArea());
 				System.out.println("Draw form square: ");
 				squareConsoleDrawer.drawSquare();
@@ -43,45 +47,59 @@ public class Main {
 
 			case 2:
 				double rectangleBase, rectangleHeight;
-
+				String descriptionRectangle;
+				
+				System.out.println("Description of retangle: ");
+				descriptionRectangle = reader.next();
 				System.out.print("Base of rectangle: ");
 				rectangleBase = reader.nextDouble();
 				System.out.print("Height of rectangle: ");
 				rectangleHeight = reader.nextDouble();
 
-				Rectangle rectangle = new Rectangle(rectangleBase, rectangleHeight);
+				Rectangle rectangle = new Rectangle(descriptionRectangle,rectangleBase, rectangleHeight);
 				RectangleConsoleDrawer rectangleConsoleDrawer = new RectangleConsoleDrawer(rectangle);
 
 				rectangle.calculateArea();
+				System.out.println(rectangle.getDescription());
 				System.out.println("Area of rectangle: " + rectangle.getArea());
 				System.out.println("Draw form rectangle:");
 				rectangleConsoleDrawer.drawRectangle();
 				break;
 			case 3:
 				double radiusOfCircle;
-
+				String descriptionCircle;
+				
+				System.out.println("Description of circle: ");
+				descriptionCircle = reader.next();
+				
 				System.out.print("Radius of circle: ");
 				radiusOfCircle = reader.nextDouble();
 
-				Circle circle = new Circle(radiusOfCircle);
+				Circle circle = new Circle(descriptionCircle,radiusOfCircle);
 				CircleConsoleDrawer circleConsoleDrawer = new CircleConsoleDrawer(circle);
 
 				circle.calculateArea();
+				System.out.println(circle.getDescription());
 				System.out.println("Area of circle: " + circle.getArea());
 				System.out.println("Draw form circle:");
 				circleConsoleDrawer.drawCircle();
 				break;
 			case 4:
 				double triangleBase, triangleHeight;
+				String descriptionTriangle;
+				
+				System.out.println("Description of triangle: ");
+				descriptionTriangle = reader.next();
 				System.out.println("Base of triangle:");
 				triangleBase = reader.nextDouble();
 				System.out.println("Height of triangle:");
 				triangleHeight = reader.nextDouble();
 
-				Triangle triangle = new Triangle(triangleBase, triangleHeight);
+				Triangle triangle = new Triangle(descriptionTriangle, triangleBase, triangleHeight);
 				TriangleConsoleDrawer triangleConsoleDrawer = new TriangleConsoleDrawer(triangle);
 
 				triangle.calculateArea();
+				System.out.println(triangle.getDescription());
 				System.out.println("Area of triangle:" + triangle.getArea());
 				System.out.println("Draw form triangle:");
 				triangleConsoleDrawer.drawTriangle();

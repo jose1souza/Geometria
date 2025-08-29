@@ -1,10 +1,11 @@
 package model;
 
-public class Square{
+public class Square extends Shape{
 	private double side;
 	private double area;
 
-	public Square(double newSide) {
+	public Square(String description, double newSide) {
+		super(description);
 		if (newSide > 0) {
 			this.side = newSide;
 		} else {
@@ -22,6 +23,11 @@ public class Square{
 	
 	public int getSideRounded() {
 		return round(this.side);
+	}
+	
+	@Override
+	public String getDescription() {
+		return "Square: " + super.getDescription();
 	}
 	
 	public void calculateArea() {

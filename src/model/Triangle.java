@@ -1,11 +1,12 @@
 package model;
 
-public class Triangle {
+public class Triangle extends Shape{
 	private double base;
 	private double height;
 	private double area;
 
-	public Triangle(double newBase, double newHeight) {
+	public Triangle(String description, double newBase, double newHeight) {
+		super(description);
 		if (newBase > 0 && newHeight > 0) {
 			this.base = newBase;
 			this.height = newHeight;
@@ -23,16 +24,16 @@ public class Triangle {
 	}
 	
 	public int getHeightRounded() {
-		return round(this.height);
+		return super.round(this.height);
+	}
+	
+	@Override
+	public String getDescription() {
+		return "Triangle: " + super.getDescription();
 	}
 
 	public void calculateArea() {
 		this.area = (this.base * this.height) / 2;
-	}
-
-	private int round(double value) {
-		int valueRounded = (int) Math.round(value);
-		return valueRounded;
 	}
 
 }
